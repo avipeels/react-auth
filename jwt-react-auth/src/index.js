@@ -8,14 +8,13 @@ import Login from './components/Login';
 
 import registerServiceWorker from './registerServiceWorker';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 
 ReactDOM.render(
-    <Router>
-        <div>
-          <Route path='/' component={App} />
-          <Route exact path="/login" component={Login} />
-        </div>
-    </Router>,
-    document.getElementById('root'))
+  <Router>
+    <div>
+      <Route exact path='/' component={App} />
+      <Route exact path="/login" component={Login} />
+    </div>
+  </Router>,
+  document.getElementById('root'))
 registerServiceWorker();

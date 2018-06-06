@@ -3,9 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
-const Auth = new AuthService();
+// const Auth = new AuthService('http://localhost:8080');
 
 class App extends Component {
+  constructor() {
+    super();
+    this.Auth = new AuthService();
+  }
   render() {
     return (
       <div className="App">
@@ -19,12 +23,9 @@ class App extends Component {
       </div>
     )
   }
-  // componentWillMount() {
-  //   if (!Auth.loggedIn())
-  //     this.props.history.replace('/');
-  // }
+
   handleLogout() {
-    Auth.logout();
+    this.Auth.logout();
     this.props.history.replace('/login');
   }
 }
